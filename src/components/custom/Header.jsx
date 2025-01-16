@@ -1,14 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 
 export default function Header() {
   const [showDropdown, setShowDropdown] = useState(false);
+  const users = JSON.parse(localStorage.getItem("user"));
+
+  useEffect(() => {
+    console.log(users);
+  }, [users]);
 
   return (
     <header className="sticky top-0 z-10 flex items-center justify-between bg-white px-6 py-4 shadow-md">
       {/* Left Section - Logo */}
       <img
-        src="public/TravelMate AI.png"
+        src="/TravelMate AI.png"
         className="w-32 text-xl font-bold text-primary md:w-40"
       />
       {/* Center Section - Optional Search Bar */}
@@ -29,7 +34,7 @@ export default function Header() {
         {/* Profile Icon with Dropdown */}
         <div className="relative">
           <img
-            src="/profile-pic.jpg" // Replace with user profile pic URL
+            src={users?.picture} // Replace with user profile pic URL
             alt="Profile"
             className="h-8 w-8 cursor-pointer rounded-full border md:h-10 md:w-10"
             onClick={() => setShowDropdown(!showDropdown)}

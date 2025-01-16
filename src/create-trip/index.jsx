@@ -5,6 +5,7 @@ import {
   SelectBudgetOptions,
   SelectTravelsList,
 } from "@/constants/options";
+import { AiOutlineLoading } from "react-icons/ai";
 
 // import { chatSession } from "@google/generative-ai";
 // import chatSession from "@google_generative-ai";
@@ -23,6 +24,9 @@ import {
 } from "@/components/ui/dialog";
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "@/service/firebaseConfig";
+import { useNavigate, useNavigation } from "react-router-dom";
 
 function CreateTrip() {
   const [place, setPlace] = useState();
@@ -30,6 +34,8 @@ function CreateTrip() {
   const [selectedBudget, setSelectedBudget] = useState(null);
   const [selectedTravelType, setSelectedTravelType] = useState(null);
   const [openDialog, setOpenDialog] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleInputChange = (name, value) => {
     setFormData({ ...formData, [name]: value });
@@ -62,6 +68,8 @@ function CreateTrip() {
       toast("Please enter a number of days between 2 and 5");
       return;
     }
+
+    setLoading(true);
     const FINAL_PROMPT = AI_PROMPT.replace(
       "{location}",
       formData?.destination?.label
@@ -76,6 +84,22 @@ function CreateTrip() {
     const result = await chatSession.sendMessage(FINAL_PROMPT);
 
     console.log(result?.response?.text());
+    setLoading(false);
+    saveAiTrip(result?.response?.text());
+  };
+
+  const saveAiTrip = async (tripData) => {
+    setLoading(true);
+    const user = JSON.parse(localStorage.getItem("user"));
+    const docId = Date.now().toString();
+    await setDoc(doc(db, "AITrips", docId), {
+      userChoice: formData,
+      tripData: JSON.parse(tripData),
+      userEmail: user?.email,
+      id: docId,
+    });
+    setLoading(false);
+    navigate(`/view-trip/${docId}`);
   };
 
   const login = useGoogleLogin({
@@ -178,7 +202,13 @@ function CreateTrip() {
         </div>
       </div>
       <div className="flex items-end justify-end m-10">
-        <Button onClick={onGenerateTrip}>Generate Trip</Button>
+        <Button disabled={loading} onClick={onGenerateTrip}>
+          {loading ? (
+            <AiOutlineLoading className="w-7 h-7 animate-spin " />
+          ) : (
+            "Generate Trip"
+          )}
+        </Button>
       </div>
 
       <Dialog open={openDialog}>
