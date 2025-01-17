@@ -12,15 +12,30 @@ import ViewTrip from "./view-trip/[tripid]/index.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <>
+        <Header />
+        <App />
+      </>
+    ),
   },
   {
     path: "/create-trip",
-    element: <CreateTrip />,
+    element: (
+      <>
+        <Header />
+        <CreateTrip />
+      </>
+    ),
   },
   {
     path: "/view-trip/:tripId",
-    element: <ViewTrip />,
+    element: (
+      <>
+        <Header />
+        <ViewTrip />
+      </>
+    ),
   },
 ]);
 
@@ -28,9 +43,7 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_AUTH_CLIENT_ID}>
       <Toaster />
-      <Header />
       <RouterProvider router={router} />
     </GoogleOAuthProvider>
-    ;
   </StrictMode>
 );
