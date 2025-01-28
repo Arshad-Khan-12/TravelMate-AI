@@ -16,6 +16,12 @@ const Carousels = () => {
             <div className="h-64 w-[40%] flex items-center justify-center">
               <img src="/TravelMate AI.png" alt="carousel" />
             </div>
+            <div className="h-64 w-[40%] flex items-center justify-center">
+              <img src="/TravelMate AI.png" alt="carousel" />
+            </div>
+            <div className="h-64 w-[40%] flex items-center justify-center">
+              <img src="/TravelMate AI.png" alt="carousel" />
+            </div>
           </CarouselItem>
         </CarouselContent>
         <CarouselPrevious />

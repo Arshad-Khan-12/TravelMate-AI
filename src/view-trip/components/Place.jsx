@@ -12,7 +12,7 @@ function Place({ place, placeIndex }) {
       textQuery: place?.placeName,
     };
     const result = await GetPlaceDetails(data).then((res) => {
-      console.log(res.data.places[0].photos[0].name);
+      // console.log(res.data.places[0].photos[0].name);
 
       const photoUrl = PHOTO_URL.replace(
         "{NAME}",
