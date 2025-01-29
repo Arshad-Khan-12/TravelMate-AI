@@ -45,7 +45,7 @@ function HotelCard({ item, index }) {
     >
       {/* Image Section */}
       <img
-        src={photoUrl ? photoUrl : "/placeholder.png"}
+        src={photoUrl ? photoUrl : "/placeholder.jpg"}
         className="h-[200px] w-full object-cover rounded-t-lg"
         alt="Hotel"
       />
