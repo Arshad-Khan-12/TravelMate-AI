@@ -8,7 +8,7 @@ function HotelCard({ item, index }) {
   const price = item.price || ""; // Ensure the price is always defined
 
   // Debugging: Log the raw price
-  console.log("Raw Price:", price);
+  // console.log("Raw Price:", price);
 
   // Extract the portion of the string before "per night"
   const extractedPrice = price.includes("per night")
@@ -16,7 +16,7 @@ function HotelCard({ item, index }) {
     : price.trim(); // If "per night" is missing, use the entire string
 
   // Debugging: Log the extracted price
-  console.log("Extracted Price:", extractedPrice);
+  // console.log("Extracted Price:", extractedPrice);
 
   const [photoUrl, setPhotoUrl] = useState();
   useEffect(() => {
@@ -53,7 +53,7 @@ function HotelCard({ item, index }) {
       {/* Content Section */}
       <div className="flex flex-col flex-grow justify-between p-4">
         {/* Rating and Price */}
-        <div className="flex justify-between items-center mb-3 font-bold text-sm">
+        <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center mb-3 font-bold text-sm">
           <div className="flex items-center gap-1">
             <BsFillStarFill className="text-yellow-500" />
             <span>{item.rating}</span>

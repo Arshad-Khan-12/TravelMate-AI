@@ -6,11 +6,7 @@ import {
   SelectTravelsList,
 } from "@/constants/options";
 import { AiOutlineLoading } from "react-icons/ai";
-
-// import { chatSession } from "@google/generative-ai";
-// import chatSession from "@google_generative-ai";
 import { chatSession } from "@/service/AIModel";
-
 import React, { useEffect, useState } from "react";
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 import { toast } from "sonner";
@@ -48,7 +44,6 @@ function CreateTrip() {
   const onGenerateTrip = async () => {
     const user = localStorage.getItem("user");
     if (user == null) {
-      // toast("Please login to generate trip");
       setOpenDialog(true);
       return;
     }
@@ -128,16 +123,16 @@ function CreateTrip() {
   };
 
   return (
-    <div className="sm:px-10 md:px-20 lg:px-40 xl:px-60 px-5 mt-10">
-      <h2 className="font-bold text-3xl ">
+    <div className="px-5 sm:px-10 md:px-20 lg:px-40 xl:px-60 mt-10">
+      <h2 className="font-bold text-3xl">
         Tell us your travel preferences 🛩️ 🌍 💶
       </h2>
-      <p className="mt-4 text-gray-600 text-xl ">
+      <p className="mt-4 text-gray-600 text-xl">
         Just provide some basic information, and our trip planner will generate
         a customized itinerary based on your preferences.
       </p>
       <div className="text-xl mt-10 font-medium space-y-3">
-        <div className="">
+        <div>
           <h2>What is destination of choice?</h2>
           <GooglePlacesAutocomplete
             apiKey={import.meta.env.VITE_GOOGLE_PLACE_API_KEY}
@@ -149,7 +144,7 @@ function CreateTrip() {
             }}
           />
         </div>
-        <div className="">
+        <div>
           <h2>How many days are you planning your trip?</h2>
           <Input
             type="number"
@@ -160,7 +155,7 @@ function CreateTrip() {
       </div>
       <div className="text-xl mt-10 font-medium">
         <h2>What's Your Budget?</h2>
-        <div className="grid grid-cols-3 md:grid-cols-2 gap-4 mt-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-5">
           {SelectBudgetOptions.map((item, index) => (
             <div
               key={index}
@@ -181,8 +176,8 @@ function CreateTrip() {
       </div>
 
       <div className="text-xl mt-10 font-medium">
-        <h2>What's Your Budget?</h2>
-        <div className="grid grid-cols-3 md:grid-cols-2 gap-4 mt-5">
+        <h2>What's Your Travel Type?</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-5">
           {SelectTravelsList.map((item, index) => (
             <div
               key={index}
@@ -204,7 +199,7 @@ function CreateTrip() {
       <div className="flex items-end justify-end m-10">
         <Button disabled={loading} onClick={onGenerateTrip}>
           {loading ? (
-            <AiOutlineLoading className="w-7 h-7 animate-spin " />
+            <AiOutlineLoading className="w-7 h-7 animate-spin" />
           ) : (
             "Generate Trip"
           )}
@@ -222,15 +217,14 @@ function CreateTrip() {
               />
             </DialogTitle>
             <DialogDescription>
-              <h2 className="font-bold text-xl text-gray-800 text-center  ">
+              <h2 className="font-bold text-xl text-gray-800 text-center">
                 Sign in with Google
               </h2>
               <p className="mt-5">
-                {" "}
                 Sign in with Google Authentication securely to continue using
-                the App{" "}
+                the App
               </p>
-              <Button onClick={login} className="w-full mt-5" variant="">
+              <Button onClick={login} className="w-full mt-5">
                 Sign in
               </Button>
             </DialogDescription>
