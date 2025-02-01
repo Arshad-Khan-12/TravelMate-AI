@@ -38,7 +38,7 @@ function CreateTrip() {
   };
 
   useEffect(() => {
-    console.log(formData);
+    // console.log(formData);
   }, [formData]);
 
   const onGenerateTrip = async () => {
@@ -74,7 +74,7 @@ function CreateTrip() {
       .replace("{budget}", formData?.budget)
       .replace("{totalDays}", formData?.days);
 
-    console.log(FINAL_PROMPT);
+    // console.log(FINAL_PROMPT);
 
     const result = await chatSession.sendMessage(FINAL_PROMPT);
 
@@ -114,7 +114,7 @@ function CreateTrip() {
         }
       )
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         localStorage.setItem("user", JSON.stringify(res.data));
         setOpenDialog(false);
         onGenerateTrip();

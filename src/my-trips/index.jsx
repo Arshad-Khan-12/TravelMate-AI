@@ -28,7 +28,7 @@ function MyTrips() {
     querySnapshot.forEach((doc) => {
       //   console.log(doc.id, " => ", doc.data());
       setTrips((prev) => [...prev, doc.data()]);
-      console.log(trips);
+      // console.log(trips);
     });
   };
   return (
