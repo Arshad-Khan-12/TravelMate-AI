@@ -210,11 +210,7 @@ function CreateTrip() {
         <DialogContent>
           <DialogHeader>
             <DialogTitle>
-              <img
-                className="h-24 mx-auto"
-                src="public/TravelMate AI.png"
-                alt=""
-              />
+              <img className="h-24 mx-auto" src="TravelMate AI.png" alt="" />
             </DialogTitle>
             <DialogDescription>
               <h2 className="font-bold text-xl text-gray-800 text-center">

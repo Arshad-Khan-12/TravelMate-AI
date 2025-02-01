@@ -119,7 +119,7 @@ export default function Header() {
                   <DialogTitle>
                     <img
                       className="h-24 mx-auto"
-                      src="public/TravelMate AI.png"
+                      src="TravelMate AI.png"
                       alt=""
                     />
                     {/* Add close button */}
@@ -155,7 +155,7 @@ export default function Header() {
                   <DialogTitle>
                     <img
                       className="h-24 mx-auto"
-                      src="public/TravelMate AI.png"
+                      src="TravelMate AI.png"
                       alt=""
                     />
                   </DialogTitle>
