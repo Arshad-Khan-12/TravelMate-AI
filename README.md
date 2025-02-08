@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/04be5855-b554-4184-8cae-be83008688fa)
+
 # TravelMate AI
 
 An intelligent, AI-driven travel assistant that crafts customized itineraries tailored to your unique preferences
@@ -28,6 +28,7 @@ https://travelmate-ai.netlify.app/
 ![image](https://github.com/user-attachments/assets/5709c2c2-d400-4daf-a720-304978eda41d)
 ![image](https://github.com/user-attachments/assets/fd0062e7-db84-4384-9bf7-77ddb5992020)
 ![image](https://github.com/user-attachments/assets/dfc335d0-efbd-470f-a2ea-a0ca99f4e57c)
+![image](https://github.com/user-attachments/assets/04be5855-b554-4184-8cae-be83008688fa)
 
 
 ## Technology Stack
