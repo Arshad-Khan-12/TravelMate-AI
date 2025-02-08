@@ -1,4 +1,4 @@
-
+![image](https://github.com/user-attachments/assets/04be5855-b554-4184-8cae-be83008688fa)
 # TravelMate AI
 
 An intelligent, AI-driven travel assistant that crafts customized itineraries tailored to your unique preferences
@@ -16,6 +16,7 @@ TravelMate AI is a revolutionary web application designed to simplify your trave
 - Local Recommendations: Discover must-visit spots, restaurants, and cultural events.
 - Group Trip Planning: Collaborate with others to create shared itineraries.
 - Real-Time Updates: Receive live notifications and updates for your trip.
+
 ## Demo
 
 https://travelmate-ai.netlify.app/
@@ -24,6 +25,10 @@ https://travelmate-ai.netlify.app/
 ## Screenshots
 
 ![image](https://github.com/user-attachments/assets/cc0f0124-42f7-41b0-a997-36c037e814e8)
+![image](https://github.com/user-attachments/assets/5709c2c2-d400-4daf-a720-304978eda41d)
+![image](https://github.com/user-attachments/assets/fd0062e7-db84-4384-9bf7-77ddb5992020)
+![image](https://github.com/user-attachments/assets/dfc335d0-efbd-470f-a2ea-a0ca99f4e57c)
+
 
 ## Technology Stack
 
